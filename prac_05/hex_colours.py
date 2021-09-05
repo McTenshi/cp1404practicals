@@ -7,3 +7,10 @@ HEX_COLOURS = {"aliceblue": "#f0f8ff", "antiquewhite": "#faebd7", "aquamarine" :
                "beige": "#f5f5dc", "black": "#000000", "blue": "#0000ff", "brown": "#a52a2a", "cyan": "#00ffff",
                "green": "#00ff00"}
 
+choice = input("Colour: ").lower()
+while choice != "":
+    if choice not in HEX_COLOURS:
+        print("Invalid choice.")
+    else:
+        print(f"{choice} is {HEX_COLOURS[choice]}")
+    choice = input("Colour: ").lower()
