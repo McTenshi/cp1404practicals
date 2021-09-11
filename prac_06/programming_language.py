@@ -7,12 +7,14 @@ Programming Language
 
 class ProgrammingLanguage:
     def __init__(self, name, typing, reflection, year):
+        """Initialise a Programming Language instance"""
         self.name = name
         self.typing = typing
         self.reflection = reflection
         self.year = year
 
     def is_dynamic(self):
+        """Return True if typing is Dynamic"""
         if self.typing == "Dynamic":
             return True
         else:
