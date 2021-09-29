@@ -22,16 +22,17 @@ class ConvertMilesApp(App):
 
     def handle_convert(self, miles):
         """Converts miles into kilometers"""
-        self.output = str(float(miles) * MILES_TO_KILOMETERS)
+        try:
+            self.output = str(float(miles) * MILES_TO_KILOMETERS)
+        except ValueError:
+            self.output = '0.0'
 
-    def handle_miles_increase(self, miles):
-        """Increases miles by one"""
-        self.root.ids.input_miles.text = str(float(miles) + 1)
+    def handle_miles_increment(self, miles, increment):
+        try:
+            self.root.ids.input_miles.text = str(float(miles) + increment)
+        except ValueError:
+            self.root.ids.input_miles.text = str(0 + increment)
 
-    def handle_miles_decrease(self, miles):
-        """Decreases miles by one"""
-        self.root.ids.input_miles.text = str(float(miles) - 1)
-        pass
 
 # Run the app
 ConvertMilesApp().run()
